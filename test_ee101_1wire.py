@@ -27,11 +27,9 @@ ser = serial.Serial("/dev/serial0",
                     )
 time.sleep(1)
 try:
-    #ser.write(("Hello World\r\n".encode()))
-    
+
     i = 0
     
-    #print ("Apply loopback wire from header pins 8 (uart.tx) to 10 (uart.rx)")
     while True:
         EE101Text(0,"Hello")
         EE101Text(1,"Tim")
@@ -43,8 +41,7 @@ try:
         EE101Text(7,"Python")
 
         i += 1
-        #if i == 256:
-        #    i = 0
+
         EE101Value(0, i)                                           
         EE101Value(1, i)                                          
         EE101Value(2, i)
@@ -53,11 +50,6 @@ try:
         EE101Value(5, i)
         EE101Value(6, i)
         EE101Value(7, i)
-        
-        # tx>rx loopback wire applied on header pins 8 and 10
-        #if ser.inWaiting() > 0:
-        #    data = ser.read()
-        #    print(data)
         
 except KeyboardInterrupt:
     print("Exiting Program")
