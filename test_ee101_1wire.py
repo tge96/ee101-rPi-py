@@ -1,4 +1,3 @@
-import time
 import serial
 
 def EE101Text(channel, text):
