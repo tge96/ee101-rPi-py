@@ -19,13 +19,9 @@ def EE101Value(channel, value):
 
 print("Press CTL+C to exit program")
 
-ser = serial.Serial("/dev/serial0",
-                    baudrate=9600,
-                    parity=serial.PARITY_NONE,
-                    stopbits=serial.STOPBITS_ONE,
-                    bytesize=serial.EIGHTBITS
-                    )
+ser = serial.Serial("/dev/serial0")
 time.sleep(1)
+
 try:
 
     i = 0
