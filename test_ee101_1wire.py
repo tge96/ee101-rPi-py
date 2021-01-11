@@ -17,12 +17,11 @@ def EE101Value(channel, value):
     ser.write(bytes([(int(value >> 8))]))
     ser.write(bytes([(int(value) & 0xFF)]))
 
-print("Press CTL+C to exit program")
-
-ser = serial.Serial("/dev/serial0")
-time.sleep(1)
-
 try:
+
+    ser = serial.Serial("/dev/serial0")
+
+    print("Press CTL+C to exit program")
 
     i = 0
     
@@ -34,7 +33,7 @@ try:
         EE101Text(4,"your")
         EE101Text(5,"ee101")
         EE101Text(6,"ported to")
-        EE101Text(7,"Python")
+        EE101Text(7,"Python on Raspberry Pi 3B+")
 
         i += 1
 
